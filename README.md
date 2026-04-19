@@ -30,13 +30,13 @@ Three-dimensional object detection is a critical task in autonomous driving perc
 OGFusion is an occupancy guided radar-camera fusion framework for robust 3D object detection in autonomous driving scenarios. The framework mainly consists of the following components:
 
 1. **Geometric Radar Densification (GRD)**  
-   GRD is used to enhance sparse radar observations with geometry-aware cues derived from image-based semantic information.
+   We introduce a Geometric Radar Densification module that improves geometric modeling ability by enhancing radar spatial support through angular perturbation and image-guided filtering, thereby alleviating radar sparsity and angular uncertainty.
 
 2. **Spatial-Context Feature Pyramid (SCFP)**  
-   SCFP improves multi-level feature representation by strengthening spatial and contextual modeling across feature pyramid levels.
+   We propose a Spatial-Context Feature Pyramid that incorporates explicit spatial prior modeling and context-aware selective response refinement to alleviate the lack of explicit positional information and insufficient contextual modeling across pyramid levels.
 
 3. **Occupancy Guided Attention (OGA)**  
-   OGA performs radar-camera feature interaction using occupancy-guided local cross-attention and occupancy feature integration.
+   We design an Occupancy Guided Attention module that enables radar-camera feature fusion through occupancy guided local cross-attention and occupancy feature integration, with lower theoretical complexity than dense global attention.
 
 The implementation is organized around the OpenPCDet-style detection pipeline, with additional modules for radar-camera fusion, geometric densification, and occupancy-guided attention.
 
@@ -133,26 +133,6 @@ Dataset conversion and information-file generation utilities are provided under:
 ```text
 pcdet/datasets/
 ```
-
-Please follow the data licenses and official download instructions of the original datasets.
-
-The Geometric Radar Densification module is used to generate denser radar cues from image-based semantic and geometric information.
-
-The related scripts are provided under:
-
-```text
-Mask2Former/demo/
-```
-
-Please make sure that the Mask2Former environment is properly configured before running the densification pipeline.
-
-The generated densified radar features should be saved under the following directory:
-
-```text
-data/<dataset_name>/training/mask2former_geometric_densification/
-```
-
-Detailed dataset-specific execution commands will be updated together with the release of the corresponding reproducibility package.
 
 ## Training
 
