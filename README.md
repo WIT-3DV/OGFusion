@@ -4,7 +4,7 @@ Official implementation of:
 
 **“Occupancy Guided Radar-Camera Fusion for Robust 3D Object Detection in Autonomous Driving”**
 
-This repository contains the source code, configuration files, and usage instructions for OGFusion.
+submitted to **The Visual Computer**. This repository contains the source code, configuration files, and usage instructions for OGFusion.
 
 ## Abstract
 
